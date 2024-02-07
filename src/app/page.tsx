@@ -1,10 +1,9 @@
-import { Button } from "@/components/UI/Button";
+import Input from "@/components/UI/Input";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col p-24">
-      font test
-      <Button>See Product</Button>
+      <Input label="name" placeholder="insert your name" error="wrong format" />
     </main>
   );
 }
