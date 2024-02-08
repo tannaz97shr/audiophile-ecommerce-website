@@ -5,6 +5,7 @@ const HomeBanner = () => {
   return (
     <div
       className="relative flex w-full h-[510px] bg-cover bg-center bg-no-repeat 
+      md:h-[620px] lg:h-[650px]
     bg-[url('/assets/newProduct/mobile.jpg')] md:bg-[url('/assets/newProduct/tablet.jpg')] lg:bg-[url('/assets/newProduct/desktop.jpg')]"
     >
       <div className="flex flex-col m-auto items-center lg:items-start lg:ml-40">
