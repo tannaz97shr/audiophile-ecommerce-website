@@ -1,11 +1,11 @@
 "use client";
 
-import Radio from "@/components/UI/Radio";
+import InputNumber from "@/components/UI/NumberInput";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col p-24">
-      <Radio name="e-Money" value="e-money" />
+      <InputNumber initialValue={0} />
     </main>
   );
 }
