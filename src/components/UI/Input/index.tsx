@@ -9,7 +9,13 @@ interface InputProps {
   error?: string;
 }
 
-const Input = ({ label, placeholder, required, error }: InputProps) => {
+const Input = ({
+  label,
+  placeholder,
+  required,
+  error,
+  className,
+}: InputProps) => {
   return (
     <label className="flex flex-col capitalize text-sm w-fit">
       <div className="flex">
@@ -17,10 +23,9 @@ const Input = ({ label, placeholder, required, error }: InputProps) => {
         {error ? <span className="ml-auto text-red">{error}</span> : null}
       </div>
       <input
-        className={`border border-grey-dark py-4 px-6 rounded-lg mt-2 w-80 focus-visible:outline-none
+        className={`border border-grey-dark py-4 px-6 rounded-lg mt-2 focus-visible:outline-none
         focus-visible:border-orange-dark
-        ${error && "border-2 border-red"}
-        `}
+        ${error && "border-2 border-red"} ${className}`}
         required={required}
         placeholder={placeholder}
       />
