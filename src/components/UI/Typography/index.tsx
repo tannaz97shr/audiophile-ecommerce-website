@@ -101,7 +101,7 @@ export const Subtitle = ({ children, className }: TextProps) => {
 
 export const P = ({ children, className }: TextProps) => {
   return (
-    <h1 className={`text-[15px] leading-[25px]${className && className}`}>
+    <h1 className={`text-[15px] leading-[25px] ${className && className}`}>
       {children}
     </h1>
   );

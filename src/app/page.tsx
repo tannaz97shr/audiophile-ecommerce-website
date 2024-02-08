@@ -1,11 +1,9 @@
-"use client";
-
-import InputNumber from "@/components/UI/NumberInput";
+import HomeBanner from "@/components/HomeBanner";
 
 export default function Home() {
   return (
     <>
-      <InputNumber initialValue={0} />
+      <HomeBanner />
     </>
   );
 }
