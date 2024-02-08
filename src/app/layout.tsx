@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import HeaderMenu from "@/components/HeaderMenu";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -18,6 +19,7 @@ export default function RootLayout({
         <main className="flex min-h-screen flex-col">
           <HeaderMenu />
           {children}
+          <Footer />
         </main>
       </body>
     </html>

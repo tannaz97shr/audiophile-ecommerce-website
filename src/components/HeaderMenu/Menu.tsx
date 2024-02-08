@@ -7,25 +7,26 @@ import Backdrop from "../UI/Backdrop";
 import { BurgerMenuIcon } from "../UI/Icons";
 import MenuItem from "./MenuItem";
 
+export const MenuItems: IHeaderMenuItem[] = [
+  {
+    name: "headphones",
+    href: "/headphones",
+    image: "/assets/image-category-thumbnail-headphones.png",
+  },
+  {
+    name: "speakers",
+    href: "/speakers",
+    image: "/assets/image-category-thumbnail-speakers.png",
+  },
+  {
+    name: "earphones",
+    href: "/earphones",
+    image: "/assets/image-category-thumbnail-earphones.png",
+  },
+];
+
 const Menu = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const items: IHeaderMenuItem[] = [
-    {
-      name: "headphones",
-      href: "/headphones",
-      image: "/assets/image-category-thumbnail-headphones.png",
-    },
-    {
-      name: "speakers",
-      href: "/speakers",
-      image: "/assets/image-category-thumbnail-speakers.png",
-    },
-    {
-      name: "earphones",
-      href: "/earphones",
-      image: "/assets/image-category-thumbnail-earphones.png",
-    },
-  ];
   return (
     <>
       <button
@@ -46,7 +47,7 @@ const Menu = () => {
       {isOpen && (
         <div className="bg-white absolute top-[90px] z-20 w-full left-0 rounded-b px-4 py-6 lg:hidden">
           <div className="flex flex-col md:flex-row">
-            {items.map((item: IHeaderMenuItem) => (
+            {MenuItems.map((item: IHeaderMenuItem) => (
               <MenuItem item={item} />
             ))}
           </div>
@@ -59,7 +60,7 @@ const Menu = () => {
         >
           home
         </Link>
-        {items.map((item: IHeaderMenuItem) => (
+        {MenuItems.map((item: IHeaderMenuItem) => (
           <Link
             key={item.name}
             href={item.href}
