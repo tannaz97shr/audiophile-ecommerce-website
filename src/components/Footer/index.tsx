@@ -10,29 +10,37 @@ import FooterMenu from "./Menu";
 
 const Footer = () => {
   return (
-    <div className=" bg-black flex mt-auto text-white flex-col items-center">
+    <div
+      className=" bg-black flex mt-auto text-white flex-col items-center 
+    md:items-start md:pl-10"
+    >
       <div className="w-24 border-t-4 border-orange-dark" />
       <LogoIcon className="mt-12" />
       <FooterMenu />
-      <P className=" text-border-grey text-center mt-10 mx-6">
+      <P className=" text-border-grey text-center md:text-start mt-10 mx-6 md:ml-0">
         Audiophile is an all in one stop to fulfill your audio needs. We&apos;re
         a small team of music lovers and sound specialists who are devoted to
         helping you get the most out of personal audio. Come and visit our demo
         facility - we&apos;re open 7 days a week.
       </P>
-      <P className=" text-border-grey text-center mt-10 mx-6">
-        Copyright 2021. All Rights Reserved
-      </P>
-      <div className="mt-12 flex gap-2 mb-4">
-        <Link href="#">
-          <IconFacebook />
-        </Link>
-        <Link href="#">
-          <IconInstagram />
-        </Link>
-        <Link href="#">
-          <IconTwitter />
-        </Link>
+      <div
+        className=" mb-4 flex items-center flex-col mx-6 mt-10 
+      md:flex-row md:justify-between md:w-full md:pr-6 md:ml-0"
+      >
+        <P className=" text-border-grey text-center">
+          Copyright 2021. All Rights Reserved
+        </P>
+        <div className="flex gap-4 mt-10 md:mt-0">
+          <Link href="#">
+            <IconFacebook />
+          </Link>
+          <Link href="#">
+            <IconInstagram />
+          </Link>
+          <Link href="#">
+            <IconTwitter />
+          </Link>
+        </div>
       </div>
     </div>
   );
