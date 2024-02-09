@@ -1,13 +1,13 @@
 "use client";
 
-import { IHeaderMenuItem } from "@/models/general";
+import { ICategoryItem } from "@/models/general";
 import Link from "next/link";
 import { useState } from "react";
+import MenuItem from "../CategoryCard/index.tsx";
 import Backdrop from "../UI/Backdrop";
 import { BurgerMenuIcon } from "../UI/Icons";
-import MenuItem from "./MenuItem";
 
-export const MenuItems: IHeaderMenuItem[] = [
+export const CategoryItems: ICategoryItem[] = [
   {
     name: "headphones",
     href: "/headphones",
@@ -47,8 +47,8 @@ const Menu = () => {
       {isOpen && (
         <div className="bg-white absolute top-[90px] z-20 w-full left-0 rounded-b px-4 py-6 lg:hidden">
           <div className="flex flex-col md:flex-row">
-            {MenuItems.map((item: IHeaderMenuItem) => (
-              <MenuItem item={item} />
+            {CategoryItems.map((item: ICategoryItem) => (
+              <MenuItem key={item.name} item={item} />
             ))}
           </div>
         </div>
@@ -60,7 +60,7 @@ const Menu = () => {
         >
           home
         </Link>
-        {MenuItems.map((item: IHeaderMenuItem) => (
+        {CategoryItems.map((item: ICategoryItem) => (
           <Link
             key={item.name}
             href={item.href}

@@ -42,7 +42,7 @@ export const IconArrowRight = (props: IconProps) => {
       <path
         d="M1.322 1l5 5-5 5"
         stroke="#D87D4A"
-        stroke-width="2"
+        strokeWidth="2"
         fill="none"
         fillRule="evenodd"
       />

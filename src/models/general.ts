@@ -1,4 +1,4 @@
-export interface IHeaderMenuItem {
+export interface ICategoryItem {
   name: string;
   href: string;
   image: string;

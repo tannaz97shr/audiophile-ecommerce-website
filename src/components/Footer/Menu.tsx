@@ -1,8 +1,8 @@
 "use client";
 
-import { IHeaderMenuItem } from "@/models/general";
+import { ICategoryItem } from "@/models/general";
 import Link from "next/link";
-import { MenuItems } from "../HeaderMenu/Menu";
+import { CategoryItems } from "../HeaderMenu/Menu";
 
 const FooterMenu = () => {
   return (
@@ -13,7 +13,7 @@ const FooterMenu = () => {
       <Link href={"/"} className="mb-4 hover:text-orange-dark">
         home
       </Link>
-      {MenuItems.map((item: IHeaderMenuItem) => (
+      {CategoryItems.map((item: ICategoryItem) => (
         <Link
           key={item.name}
           href={item.href}

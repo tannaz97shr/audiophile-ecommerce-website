@@ -1,10 +1,10 @@
-import { IHeaderMenuItem } from "@/models/general";
+import { ICategoryItem } from "@/models/general";
 import Image from "next/image";
 import { Button } from "../UI/Button";
 import { IconArrowRight } from "../UI/Icons";
 
 interface MenuItemProps {
-  item: IHeaderMenuItem;
+  item: ICategoryItem;
 }
 
 const MenuItem = ({ item }: MenuItemProps) => {
