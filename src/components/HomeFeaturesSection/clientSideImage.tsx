@@ -7,11 +7,10 @@ import { useEffect, useState } from "react";
 interface ClientSideImageProps {
   product: IProduct;
   png?: boolean;
-  fill?: boolean;
   className?: string;
 }
 
-const ClientSideImage = ({ product, png, fill }: ClientSideImageProps) => {
+const ClientSideImage = ({ product, png }: ClientSideImageProps) => {
   const [deviceType, setDeviceType] = useState<"mobile" | "tablet" | "desktop">(
     "mobile"
   );
@@ -24,27 +23,27 @@ const ClientSideImage = ({ product, png, fill }: ClientSideImageProps) => {
       product.category
     }-${product.slug.slice(0, 3)}.jpg`
   );
-  if (fill) {
-    return (
-      <Image
-        src={`/assets/${product.slug}/${deviceType}/image-${
-          product.category
-        }-${product.slug.slice(0, 3)}.${png ? "png" : "jpg"}`}
-        alt={product.slug}
-        fill
-      />
-    );
-  }
+  //   if (fill) {
   return (
     <Image
       src={`/assets/${product.slug}/${deviceType}/image-${
         product.category
       }-${product.slug.slice(0, 3)}.${png ? "png" : "jpg"}`}
       alt={product.slug}
-      width={100}
-      height={100}
+      fill
     />
   );
+  //   }
+  //   return (
+  //     <Image
+  //       src={`/assets/${product.slug}/${deviceType}/image-${
+  //         product.category
+  //       }-${product.slug.slice(0, 3)}.${png ? "png" : "jpg"}`}
+  //       alt={product.slug}
+  //       width={100}
+  //       height={100}
+  //     />
+  //   );
 };
 
 export default ClientSideImage;
