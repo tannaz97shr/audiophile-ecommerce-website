@@ -10,7 +10,7 @@ const HomeFeaturesSection = async () => {
   const [product1, product2, product3] = products;
   console.log("products", products);
   return (
-    <div className="flex flex-col mt-12 mx-2.5">
+    <div className="flex flex-col mt-12">
       {product3 && (
         <div
           className="flex flex-col bg-orange-dark rounded-lg items-center py-12 
