@@ -46,7 +46,7 @@ const Menu = () => {
       )}
       {isOpen && (
         <div className="bg-white absolute top-[90px] z-20 w-full left-0 rounded-b px-4 py-6 lg:hidden">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row px-2.5 gap-2">
             {CategoryItems.map((item: ICategoryItem) => (
               <MenuItem key={item.name} item={item} />
             ))}

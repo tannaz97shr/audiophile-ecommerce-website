@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <>
       <HomeBanner />
-      <CategorySection />
-      <HomeFeaturesSection />
+      <div className="flex flex-col mx-2.5 md:mx-auto md:w-[690px] lg:w-[1020px] xl:w-[1110px]">
+        <CategorySection />
+        <HomeFeaturesSection />
+      </div>
     </>
   );
 }

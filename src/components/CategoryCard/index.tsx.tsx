@@ -11,7 +11,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
   return (
     <div
       key={item.name}
-      className="flex bg-grey h-40 rounded-lg mt-16 relative md:flex-1 mx-2.5"
+      className="flex bg-grey h-40 rounded-lg mt-16 relative md:flex-1"
     >
       <Image
         alt={item.name}
