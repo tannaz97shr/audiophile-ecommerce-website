@@ -1,14 +1,13 @@
 import { getHomeFeaturedProducts } from "@/helpers/products";
 import { IProduct } from "@/models/general";
+import ClientSideImage from "../ClientSideProductImage";
 import { Button } from "../UI/Button";
 import { P } from "../UI/Typography";
-import ClientSideImage from "./clientSideImage";
 
 const HomeFeaturesSection = async () => {
   // todo link products to slug page
   const products: IProduct[] = await getHomeFeaturedProducts();
   const [product1, product2, product3] = products;
-  console.log("products", products);
   return (
     <div className="flex flex-col mt-12">
       {product3 && (
@@ -18,7 +17,10 @@ const HomeFeaturesSection = async () => {
         lg:flex-row"
         >
           <div className="w-48 h-60 lg:w-[410px] lg:h-[493px] relative">
-            <ClientSideImage product={product3} png />
+            <ClientSideImage
+              product={product3}
+              imageName={"image-speaker-zx9.png"}
+            />
           </div>
           <div className="flex flex-col items-center lg:items-start lg:w-1/2 lg:ml-auto">
             <div className=" text-white text-center font-bold text-[24px] lg:text-[56px] mt-4">
@@ -35,7 +37,10 @@ const HomeFeaturesSection = async () => {
       )}
       {product2 && (
         <div className="w-full relative min-h-80 mt-6 rounded-lg overflow-hidden">
-          <ClientSideImage product={product2} />
+          <ClientSideImage
+            product={product2}
+            imageName={"image-speaker-zx7.jpg"}
+          />
           <div className="flex flex-col absolute left-0 top-0 bottom-0 my-auto h-fit items-center pl-6">
             <div className=" text-black text-center font-bold text-[24px] lg:text-[56px] mt-4">
               {product2.name}
@@ -49,7 +54,10 @@ const HomeFeaturesSection = async () => {
       {product1 && (
         <div className="w-full flex gap-2 mt-6 md:min-h-[320px]">
           <div className="relative flex flex-1 rounded-lg overflow-hidden">
-            <ClientSideImage product={product1} />
+            <ClientSideImage
+              product={product1}
+              imageName={"image-earphones-yx1.jpg"}
+            />
           </div>
           <div className="bg-grey w-[48%] rounded-lg p-2 flex flex-col justify-center">
             <div className=" text-black text-left font-bold text-[24px] lg:text-[56px] mt-4">
