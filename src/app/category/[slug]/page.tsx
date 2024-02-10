@@ -1,3 +1,5 @@
+import BestGrearSection from "@/components/BestGearSection";
+import CategorySection from "@/components/CategorySection";
 import ClientSideImage from "@/components/ClientSideProductImage";
 import { Button } from "@/components/UI/Button";
 import { H4, Overline, P } from "@/components/UI/Typography";
@@ -48,6 +50,8 @@ export const CategoryPage = async ({
           </div>
         ))}
       </div>
+      <CategorySection />
+      <BestGrearSection />
     </div>
   );
 };
