@@ -17,3 +17,22 @@ export const getHomeFeaturedProducts = async (): Promise<IProduct[]> => {
   );
   return filteredProducts;
 };
+
+export const getProductsByCategory = async (
+  category: string
+): Promise<IProduct[]> => {
+  const allProducts = await getProducts();
+  const filteredProducts = allProducts.filter(
+    (product: IProduct) => product.category === category
+  );
+  return filteredProducts;
+};
+
+export const getAllCategories = async () => {
+  const allProducts = await getProducts();
+  const categories: string[] = allProducts.map(
+    (product: IProduct) => product.category
+  );
+  const noDuplicate = Array.from(new Set(categories));
+  return noDuplicate;
+};

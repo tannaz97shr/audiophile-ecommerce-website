@@ -10,17 +10,17 @@ import { BurgerMenuIcon } from "../UI/Icons";
 export const CategoryItems: ICategoryItem[] = [
   {
     name: "headphones",
-    href: "/headphones",
+    href: "/category/headphones",
     image: "/assets/image-category-thumbnail-headphones.png",
   },
   {
     name: "speakers",
-    href: "/speakers",
+    href: "/category/speakers",
     image: "/assets/image-category-thumbnail-speakers.png",
   },
   {
     name: "earphones",
-    href: "/earphones",
+    href: "/category/earphones",
     image: "/assets/image-category-thumbnail-earphones.png",
   },
 ];

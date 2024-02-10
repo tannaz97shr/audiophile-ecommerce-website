@@ -14,6 +14,7 @@ const Footer = () => {
       className="bg-black flex mt-auto text-white flex-col items-center 
     md:items-start md:pl-10 lg:px-40"
     >
+      {/* <div className="flex flex-col mx-2.5 md:mx-auto md:w-[690px] lg:w-[1020px] xl:w-[1110px]"> */}
       <div className="w-24 border-t-4 border-orange-dark" />
       <div className="lg:flex w-full lg:justify-between">
         <LogoIcon className="mt-12 mx-auto md:ml-0" />
@@ -43,6 +44,7 @@ const Footer = () => {
             <IconTwitter className=" fill-white hover:fill-orange-dark" />
           </Link>
         </div>
+        {/* </div> */}
       </div>
     </div>
   );
