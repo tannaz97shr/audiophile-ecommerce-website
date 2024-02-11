@@ -14,9 +14,10 @@ const ProductDetailsOverview = ({ product }: ProductDetailsOverviewProps) => {
   const cartItemsArray: IProductCookie[] = cookiesItems?.value
     ? JSON.parse(cookiesItems?.value)
     : [];
+  console.log("cartItemsArray", cartItemsArray);
   return (
     <div className="flex flex-col mt-6 md:flex-row">
-      <div className="relative w-full aspect-square rounded-lg overflow-hidden md:aspect-[7/12]">
+      <div className="relative w-full aspect-square rounded-lg overflow-hidden md:aspect-[7/12] lg:aspect-square">
         <ClientSideImage product={product} imageName={"image-product.jpg"} />
       </div>
       <div className="flex flex-col text-left md:ml-16">

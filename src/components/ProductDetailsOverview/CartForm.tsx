@@ -19,6 +19,20 @@ const CartForm = ({ cartCookiesitems, slug }: CartFormProps) => {
       <InputNumber value={value} setValue={setValue} />
       <Button
         onClick={() => {
+          const existItem = cartCookiesitems.filter(
+            (item: IProductCookie) => item.slug === slug
+          );
+          if (existItem.length) {
+            const index = cartCookiesitems.indexOf(existItem[0]);
+            const newArray = cartCookiesitems.filter((item, i) => i !== index);
+            console.log("lets remove", newArray);
+            addRemoveCookies(
+              [...newArray, { slug: slug, amount: value }],
+              "cart",
+              7 * oneDay
+            );
+            return;
+          }
           addRemoveCookies(
             [...cartCookiesitems, { slug: slug, amount: value }],
             "cart",

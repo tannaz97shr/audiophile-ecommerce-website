@@ -21,7 +21,7 @@ const InputNumber = ({ value, setValue }: InputNumberProps) => {
         -
       </button>
       <input
-        value={value}
+        defaultValue={value}
         type="number"
         className="text-center focus-visible:outline-none w-full bg-transparent"
       />
