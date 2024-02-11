@@ -5,9 +5,16 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "text";
   className?: string;
   href?: string;
+  onClick?: () => void;
 }
 
-export const Button = ({ children, variant, className, href }: ButtonProps) => {
+export const Button = ({
+  children,
+  variant,
+  className,
+  href,
+  onClick,
+}: ButtonProps) => {
   const primaryClass =
     "border border-orange-dark hover:border-orange-light bg-orange-dark text-white hover:bg-orange-light";
   const secondaryClass =
@@ -38,6 +45,7 @@ export const Button = ({ children, variant, className, href }: ButtonProps) => {
           ? textClass
           : primaryClass
       } ${className && className}`}
+      onClick={onClick}
     >
       {children}
     </button>

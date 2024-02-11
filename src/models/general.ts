@@ -53,3 +53,8 @@ export interface IProduct {
     };
   }[];
 }
+
+export interface IProductCookie {
+  slug: string;
+  amount: number;
+}

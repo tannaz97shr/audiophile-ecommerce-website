@@ -1,20 +1,19 @@
 "use client";
 
-import { useState } from "react";
-
 interface InputNumberProps {
-  initialValue: number;
+  value: number;
+  setValue: (count: number) => void;
 }
 
-const InputNumber = ({ initialValue }: InputNumberProps) => {
-  const [value, setValue] = useState<number>(initialValue);
+const InputNumber = ({ value, setValue }: InputNumberProps) => {
+  // const [value, setValue] = useState<number>(value);
   return (
     <label className=" bg-grey px-6 py-4 w-32 flex">
       <button
         disabled={value === 0 ? true : false}
         className="text-black-light"
         onClick={() => {
-          if (value > 0) {
+          if (value > 1) {
             setValue(value - 1);
           }
         }}

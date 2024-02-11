@@ -20,7 +20,6 @@ export const CategoryPage = async ({
   if (!products.length) {
     notFound();
   }
-  console.log(products);
   return (
     <div className="flex flex-col mx-2.5 md:mx-auto md:w-[690px] lg:w-[1020px] xl:w-[1110px]">
       <div className="flex flex-col">
