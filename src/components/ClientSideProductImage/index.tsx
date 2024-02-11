@@ -9,7 +9,6 @@ interface ClientSideImageProps {
   imageName: string;
   className?: string;
 }
-
 const ClientSideImage = ({ product, imageName }: ClientSideImageProps) => {
   const [deviceType, setDeviceType] = useState<"mobile" | "tablet" | "desktop">(
     "mobile"

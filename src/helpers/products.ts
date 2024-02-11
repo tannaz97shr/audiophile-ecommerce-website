@@ -28,6 +28,19 @@ export const getProductsByCategory = async (
   return filteredProducts;
 };
 
+export const getProductBySlug = async (
+  slug: string
+): Promise<IProduct | null> => {
+  const allProducts = await getProducts();
+  const filteredProducts = allProducts.filter(
+    (product: IProduct) => product.slug === slug
+  );
+  if (!filteredProducts.length) {
+    return null;
+  }
+  return filteredProducts[0];
+};
+
 // export const getAllCategories = async () => {
 //   const allProducts = await getProducts();
 //   const categories: string[] = allProducts.map(
@@ -35,4 +48,4 @@ export const getProductsByCategory = async (
 //   );
 //   const noDuplicate = Array.from(new Set(categories));
 //   return noDuplicate;
-// };
+// }
