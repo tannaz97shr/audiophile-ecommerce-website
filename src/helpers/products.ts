@@ -28,11 +28,11 @@ export const getProductsByCategory = async (
   return filteredProducts;
 };
 
-export const getAllCategories = async () => {
-  const allProducts = await getProducts();
-  const categories: string[] = allProducts.map(
-    (product: IProduct) => product.category
-  );
-  const noDuplicate = Array.from(new Set(categories));
-  return noDuplicate;
-};
+// export const getAllCategories = async () => {
+//   const allProducts = await getProducts();
+//   const categories: string[] = allProducts.map(
+//     (product: IProduct) => product.category
+//   );
+//   const noDuplicate = Array.from(new Set(categories));
+//   return noDuplicate;
+// };

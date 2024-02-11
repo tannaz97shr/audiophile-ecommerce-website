@@ -3,7 +3,7 @@ import CategorySection from "@/components/CategorySection";
 import ClientSideImage from "@/components/ClientSideProductImage";
 import { Button } from "@/components/UI/Button";
 import { H4, Overline, P } from "@/components/UI/Typography";
-import { getAllCategories, getProductsByCategory } from "@/helpers/products";
+import { getProductsByCategory } from "@/helpers/products";
 import { IProduct } from "@/models/general";
 import { notFound } from "next/navigation";
 
@@ -12,11 +12,14 @@ export const CategoryPage = async ({
 }: {
   params: { slug: string };
 }) => {
-  const categories = await getAllCategories();
-  if (!categories.includes(params.slug)) {
+  // const categories = await getAllCategories();
+  // if (!categories.includes(params.slug)) {
+  //   notFound();
+  // }
+  const products: IProduct[] = await getProductsByCategory(params.slug);
+  if (!products.length) {
     notFound();
   }
-  const products: IProduct[] = await getProductsByCategory(params.slug);
   console.log(products);
   return (
     <div className="flex flex-col mx-2.5 md:mx-auto md:w-[690px] lg:w-[1020px] xl:w-[1110px]">
