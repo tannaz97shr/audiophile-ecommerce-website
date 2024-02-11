@@ -24,8 +24,7 @@ const CartForm = ({ cartCookiesitems, slug }: CartFormProps) => {
           );
           if (existItem.length) {
             const index = cartCookiesitems.indexOf(existItem[0]);
-            const newArray = cartCookiesitems.filter((item, i) => i !== index);
-            console.log("lets remove", newArray);
+            const newArray = cartCookiesitems.filter((_item, i) => i !== index);
             addRemoveCookies(
               [...newArray, { slug: slug, amount: value }],
               "cart",
