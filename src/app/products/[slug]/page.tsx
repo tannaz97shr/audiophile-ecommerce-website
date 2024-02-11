@@ -1,4 +1,5 @@
 import ProductDetailsFeatures from "@/components/ProductDetailsFeatures";
+import ProductDetailsGallery from "@/components/ProductDetailsGallery";
 import ProductDetailsInTheBox from "@/components/ProductDetailsInTheBox";
 import ProductDetailsOverview from "@/components/ProductDetailsOverview";
 import { getProductBySlug } from "@/helpers/products";
@@ -17,6 +18,7 @@ export const ProductPage = async ({ params }: { params: { slug: string } }) => {
         <ProductDetailsFeatures features={product.features} />
         <ProductDetailsInTheBox includes={product.includes} />
       </div>
+      <ProductDetailsGallery product={product} />
     </div>
   );
 };
