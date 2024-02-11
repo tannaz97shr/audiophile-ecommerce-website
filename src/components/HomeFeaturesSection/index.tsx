@@ -5,7 +5,6 @@ import { Button } from "../UI/Button";
 import { P } from "../UI/Typography";
 
 const HomeFeaturesSection = async () => {
-  // todo link products to slug page
   const products: IProduct[] = await getHomeFeaturedProducts();
   const [product1, product2, product3] = products;
   return (
@@ -29,7 +28,11 @@ const HomeFeaturesSection = async () => {
             <P className="text-grey-dark mt-6 text-center lg:text-left mx-6 lg:mx-0 max-w-80 lg:ml-0">
               {product3.description}
             </P>
-            <Button variant="secondary" className="mt-6">
+            <Button
+              href={`/products/${product3.slug}`}
+              variant="secondary"
+              className="mt-6"
+            >
               See Product
             </Button>
           </div>
@@ -45,7 +48,11 @@ const HomeFeaturesSection = async () => {
             <div className=" text-black text-center font-bold text-[24px] lg:text-[56px] mt-4">
               {product2.name}
             </div>
-            <Button variant="secondary" className="mt-6">
+            <Button
+              href={`/products/${product2.slug}`}
+              variant="secondary"
+              className="mt-6"
+            >
               See Product
             </Button>
           </div>
@@ -63,7 +70,11 @@ const HomeFeaturesSection = async () => {
             <div className=" text-black text-left font-bold text-[24px] lg:text-[56px] mt-4">
               {product1.name}
             </div>
-            <Button variant="secondary" className="mt-6">
+            <Button
+              href={`/products/${product1.slug}`}
+              variant="secondary"
+              className="mt-6"
+            >
               See Product
             </Button>
           </div>

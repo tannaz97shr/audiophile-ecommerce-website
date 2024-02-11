@@ -21,7 +21,9 @@ const HomeBanner = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </P>
-        <Button className="mt-6">See Product</Button>
+        <Button href={`/products/xx99-mark-one-headphones`} className="mt-6">
+          See Product
+        </Button>
       </div>
     </div>
   );

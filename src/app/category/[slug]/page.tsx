@@ -45,7 +45,9 @@ export const CategoryPage = async ({
               <P className="mt-6 text-center text-border-grey lg:text-left">
                 {product.description}
               </P>
-              <Button className="my-6">See Product</Button>
+              <Button href={`/products/${product.slug}`} className="my-6">
+                See Product
+              </Button>
             </div>
           </div>
         ))}
