@@ -2,18 +2,11 @@ import { H2, P } from "../UI/Typography";
 
 const BestGrearSection = () => {
   return (
-    <div className="my-12 flex flex-col lg:flex-row-reverse">
+    <div className="my-12 flex flex-col lg:flex-row-reverse ">
       <div
         className=" relative rounded-lg w-full aspect-square bg-[url('/assets/bestGear/mobile.jpg')] bg-cover bg-top 
       md:aspect-[23/10] md:bg-[url('/assets/bestGear/tablet.jpg')] lg:aspect-square lg:bg-[url('/assets/bestGear/desktop.jpg')] lg:w-[540px]"
-      >
-        {/* <Image
-          fill
-          alt="best gear"
-          src="/assets/image-best-gear.jpg"
-          className="
-        /> */}
-      </div>
+      ></div>
       <div className=" flex flex-col lg:w-1/2 lg:pr-4 lg:justify-center">
         <H2 className="text-center lg:text-left mt-12">
           Bringing you the <span className=" text-orange-dark">best</span> audio

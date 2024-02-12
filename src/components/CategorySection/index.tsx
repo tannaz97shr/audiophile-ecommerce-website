@@ -6,7 +6,7 @@ import { CategoryItems } from "../HeaderMenu/Menu";
 
 const CategorySection = () => {
   return (
-    <div className="flex w-full flex-col md:flex-row gap-2">
+    <div className="flex w-full flex-col md:flex-row gap-2 mt-10">
       {CategoryItems.map((item: ICategoryItem) => (
         <CategoryCard key={item.name} item={item} />
       ))}

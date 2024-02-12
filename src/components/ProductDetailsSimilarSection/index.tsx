@@ -20,7 +20,7 @@ const ProductDetailsSimilarSection = ({
           const imageName = splitImage[splitImage.length - 1];
           return (
             <div className="flex flex-col w-full">
-              <div className="relative w-full aspect-[8/3] md:aspect-[11/16] rounded-lg overflow-hidden">
+              <div className="relative w-full aspect-[8/3] md:aspect-[11/16] lg:aspect-square rounded-lg overflow-hidden">
                 <ClientSideImage slug={item.slug} imageName={imageName} />
               </div>
               <H5 className="my-8 text-center">{item.name}</H5>

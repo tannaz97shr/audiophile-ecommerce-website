@@ -1,3 +1,5 @@
+import BestGrearSection from "@/components/BestGearSection";
+import CategorySection from "@/components/CategorySection";
 import ProductDetailsFeatures from "@/components/ProductDetailsFeatures";
 import ProductDetailsGallery from "@/components/ProductDetailsGallery";
 import ProductDetailsInTheBox from "@/components/ProductDetailsInTheBox";
@@ -21,6 +23,8 @@ export const ProductPage = async ({ params }: { params: { slug: string } }) => {
       </div>
       <ProductDetailsGallery product={product} />
       <ProductDetailsSimilarSection others={product.others} />
+      <CategorySection />
+      <BestGrearSection />
     </div>
   );
 };
