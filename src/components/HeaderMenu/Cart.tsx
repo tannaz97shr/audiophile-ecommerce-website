@@ -30,7 +30,7 @@ const Cart = ({ items }: CartProps) => {
       {isOpen && (
         <>
           <Backdrop onClick={() => setIsOpen(false)} />
-          <div className="absolute bg-white top-[100px] z-30 right-0 left-0 w-[90%] mx-auto rounded-lg p-7">
+          <div className="absolute bg-white top-[100px] z-30 right-0 left-0 w-[90%] mx-auto rounded-lg p-7 max-w-[380px] md:right-12 md:mr-0">
             <div className="flex justify-between">
               <H6>cart ({cartItems.length})</H6>
               <button
