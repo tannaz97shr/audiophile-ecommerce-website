@@ -18,7 +18,7 @@ const ProductDetailsOverview = ({ product }: ProductDetailsOverviewProps) => {
   return (
     <div className="flex flex-col mt-6 md:flex-row">
       <div className="relative w-full aspect-square rounded-lg overflow-hidden md:aspect-[7/12] lg:aspect-square">
-        <ClientSideImage product={product} imageName={"image-product.jpg"} />
+        <ClientSideImage slug={product.slug} imageName={"image-product.jpg"} />
       </div>
       <div className="flex flex-col text-left md:ml-16">
         {product.new && <Overline className="mt-8">New Product</Overline>}

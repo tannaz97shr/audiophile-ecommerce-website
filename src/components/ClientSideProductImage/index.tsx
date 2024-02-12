@@ -1,15 +1,14 @@
 "use client";
 
-import { IProduct } from "@/models/general";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface ClientSideImageProps {
-  product: IProduct;
+  slug: string;
   imageName: string;
   className?: string;
 }
-const ClientSideImage = ({ product, imageName }: ClientSideImageProps) => {
+const ClientSideImage = ({ slug, imageName }: ClientSideImageProps) => {
   const [deviceType, setDeviceType] = useState<"mobile" | "tablet" | "desktop">(
     "mobile"
   );
@@ -19,8 +18,8 @@ const ClientSideImage = ({ product, imageName }: ClientSideImageProps) => {
   }, []);
   return (
     <Image
-      src={`/assets/product-${product.slug}/${deviceType}/${imageName}`}
-      alt={product.slug}
+      src={`/assets/product-${slug}/${deviceType}/${imageName}`}
+      alt={slug}
       fill
     />
   );

@@ -17,7 +17,7 @@ const HomeFeaturesSection = async () => {
         >
           <div className="w-48 h-60 lg:w-[410px] lg:h-[493px] relative">
             <ClientSideImage
-              product={product3}
+              slug={product3.slug}
               imageName={"image-speaker-zx9.png"}
             />
           </div>
@@ -41,7 +41,7 @@ const HomeFeaturesSection = async () => {
       {product2 && (
         <div className="w-full relative min-h-80 mt-6 rounded-lg overflow-hidden">
           <ClientSideImage
-            product={product2}
+            slug={product2.slug}
             imageName={"image-speaker-zx7.jpg"}
           />
           <div className="flex flex-col absolute left-0 top-0 bottom-0 my-auto h-fit items-center pl-6">
@@ -62,7 +62,7 @@ const HomeFeaturesSection = async () => {
         <div className="w-full flex gap-2 mt-6 md:min-h-[320px]">
           <div className="relative flex flex-1 rounded-lg overflow-hidden">
             <ClientSideImage
-              product={product1}
+              slug={product1.slug}
               imageName={"image-earphones-yx1.jpg"}
             />
           </div>

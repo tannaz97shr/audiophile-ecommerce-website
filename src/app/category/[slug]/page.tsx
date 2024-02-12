@@ -35,7 +35,7 @@ export const CategoryPage = async ({
             md:aspect-[2/1] lg:aspect-square"
             >
               <ClientSideImage
-                product={product}
+                slug={product.slug}
                 imageName="image-product.jpg"
               />
             </div>

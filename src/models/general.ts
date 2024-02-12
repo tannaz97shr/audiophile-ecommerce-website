@@ -44,18 +44,20 @@ export interface IProduct {
       desktop: string;
     };
   };
-  others: {
-    slug: string;
-    name: string;
-    image: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    };
-  }[];
+  others: ISimilarProduct[];
 }
 
 export interface IProductCookie {
   slug: string;
   amount: number;
+}
+
+export interface ISimilarProduct {
+  slug: string;
+  name: string;
+  image: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
 }

@@ -2,6 +2,7 @@ import ProductDetailsFeatures from "@/components/ProductDetailsFeatures";
 import ProductDetailsGallery from "@/components/ProductDetailsGallery";
 import ProductDetailsInTheBox from "@/components/ProductDetailsInTheBox";
 import ProductDetailsOverview from "@/components/ProductDetailsOverview";
+import ProductDetailsSimilarSection from "@/components/ProductDetailsSimilarSection";
 import { getProductBySlug } from "@/helpers/products";
 import { notFound } from "next/navigation";
 
@@ -19,6 +20,7 @@ export const ProductPage = async ({ params }: { params: { slug: string } }) => {
         <ProductDetailsInTheBox includes={product.includes} />
       </div>
       <ProductDetailsGallery product={product} />
+      <ProductDetailsSimilarSection others={product.others} />
     </div>
   );
 };
