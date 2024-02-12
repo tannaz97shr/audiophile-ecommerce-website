@@ -30,7 +30,7 @@ export const H2 = ({ children, className }: TextProps) => {
 export const H3 = ({ children, className }: TextProps) => {
   return (
     <h3
-      className={`font-bold text-[40px] uppercase leading-[44px] tracking-[1.5px] ${
+      className={`font-bold text-[28px] lg:text-[32px] uppercase leading-[44px] tracking-[1.5px] ${
         className && className
       }`}
     >

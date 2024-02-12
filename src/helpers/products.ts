@@ -28,11 +28,24 @@ export const getProductsByCategory = async (
   return filteredProducts;
 };
 
-export const getAllCategories = async () => {
+export const getProductBySlug = async (
+  slug: string
+): Promise<IProduct | null> => {
   const allProducts = await getProducts();
-  const categories: string[] = allProducts.map(
-    (product: IProduct) => product.category
+  const filteredProducts = allProducts.filter(
+    (product: IProduct) => product.slug === slug
   );
-  const noDuplicate = Array.from(new Set(categories));
-  return noDuplicate;
+  if (!filteredProducts.length) {
+    return null;
+  }
+  return filteredProducts[0];
 };
+
+// export const getAllCategories = async () => {
+//   const allProducts = await getProducts();
+//   const categories: string[] = allProducts.map(
+//     (product: IProduct) => product.category
+//   );
+//   const noDuplicate = Array.from(new Set(categories));
+//   return noDuplicate;
+// }
