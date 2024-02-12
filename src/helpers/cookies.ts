@@ -17,7 +17,7 @@ export async function addRemoveCookies(
   });
 }
 
-export async function getCarCookies() {
+export async function getCartCookies() {
   const cookieStore = cookies();
   const cookiesItems: RequestCookie | undefined = cookieStore.get("cart");
   const cartItemsArray: IProductCookie[] = cookiesItems?.value

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import CartModal from "../CartModal";
+import Backdrop from "../UI/Backdrop";
 import { CartIcon } from "../UI/Icons";
 
 const Cart = () => {
@@ -16,7 +16,14 @@ const Cart = () => {
       >
         <CartIcon />
       </button>
-      {isOpen && <CartModal closeHandler={() => setIsOpen(false)} />}
+      {isOpen && (
+        <>
+          <Backdrop onClick={() => setIsOpen(false)} />
+          <div className="absolute bg-white top-[100px] z-30 right-0 left-0 w-[90%] mx-auto rounded-lg">
+            this is cart Modal
+          </div>
+        </>
+      )}
     </>
   );
 };
