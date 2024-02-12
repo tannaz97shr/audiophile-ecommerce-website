@@ -25,3 +25,11 @@ export async function getCartCookies() {
     : [];
   return cartItemsArray;
 }
+
+export async function addRemoveAllCookies() {
+  "use server";
+  cookies().set({
+    name: "cart",
+    value: JSON.stringify([]),
+  });
+}
