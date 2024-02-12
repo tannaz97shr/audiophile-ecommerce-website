@@ -1,6 +1,6 @@
 "use client";
 
-import { addRemoveAllCookies } from "@/helpers/cookies";
+import { addRemoveAllCookies, addRemoveCookies } from "@/helpers/cookies";
 import { IProductCookie } from "@/models/general";
 import Image from "next/image";
 import { useState } from "react";
@@ -15,6 +15,7 @@ interface CartProps {
 }
 const Cart = ({ items }: CartProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [cartItems, setCartItems] = useState(items);
   let total = 0;
   return (
     <>
@@ -31,7 +32,7 @@ const Cart = ({ items }: CartProps) => {
           <Backdrop onClick={() => setIsOpen(false)} />
           <div className="absolute bg-white top-[100px] z-30 right-0 left-0 w-[90%] mx-auto rounded-lg p-7">
             <div className="flex justify-between">
-              <H6>cart ({items.length})</H6>
+              <H6>cart ({cartItems.length})</H6>
               <button
                 onClick={() => addRemoveAllCookies()}
                 className=" text-border-grey underline"
@@ -39,7 +40,7 @@ const Cart = ({ items }: CartProps) => {
                 Remove all
               </button>
             </div>
-            {items.map((item: IProductCookie) => {
+            {cartItems.map((item: IProductCookie, index) => {
               total = total + item.price * item.amount;
               return (
                 <div className="flex flex-row my-6">
@@ -56,7 +57,18 @@ const Cart = ({ items }: CartProps) => {
                       $ {item.price * item.amount}
                     </span>
                   </div>
-                  <InputNumber value={item.amount} setValue={() => null} />
+                  <InputNumber
+                    value={item.amount}
+                    setValue={(val: number) => {
+                      const oneDay = 24 * 60 * 60 * 1000;
+                      let update = [...cartItems];
+                      let itemUpdate = { ...update[index] };
+                      itemUpdate.amount = val;
+                      update[index] = itemUpdate;
+                      setCartItems([...update]);
+                      addRemoveCookies([...cartItems], "cart", 7 * oneDay);
+                    }}
+                  />
                 </div>
               );
             })}
