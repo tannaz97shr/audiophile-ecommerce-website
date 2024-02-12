@@ -14,7 +14,6 @@ const ProductDetailsOverview = ({ product }: ProductDetailsOverviewProps) => {
   const cartItemsArray: IProductCookie[] = cookiesItems?.value
     ? JSON.parse(cookiesItems?.value)
     : [];
-  console.log("cartItemsArray", cartItemsArray);
   return (
     <div className="flex flex-col mt-6 md:flex-row">
       <div className="relative w-full aspect-square rounded-lg overflow-hidden md:aspect-[7/12] lg:aspect-square">

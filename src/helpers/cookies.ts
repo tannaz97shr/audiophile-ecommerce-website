@@ -1,6 +1,7 @@
 "use server";
 
 import { IProductCookie } from "@/models/general";
+import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import { cookies } from "next/headers";
 
 export async function addRemoveCookies(
@@ -14,4 +15,13 @@ export async function addRemoveCookies(
     value: JSON.stringify(items),
     expires: Date.now() + time,
   });
+}
+
+export async function getCarCookies() {
+  const cookieStore = cookies();
+  const cookiesItems: RequestCookie | undefined = cookieStore.get("cart");
+  const cartItemsArray: IProductCookie[] = cookiesItems?.value
+    ? JSON.parse(cookiesItems?.value)
+    : [];
+  return cartItemsArray;
 }

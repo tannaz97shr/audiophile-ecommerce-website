@@ -45,7 +45,7 @@ export const Button = ({
           ? textClass
           : primaryClass
       } ${className && className}`}
-      onClick={onClick}
+      onClick={onClick ? () => onClick() : () => null}
     >
       {children}
     </button>

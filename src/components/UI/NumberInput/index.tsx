@@ -13,7 +13,7 @@ const InputNumber = ({ value, setValue }: InputNumberProps) => {
         disabled={value === 0 ? true : false}
         className="text-black-light"
         onClick={() => {
-          if (value > 1) {
+          if (value > 0) {
             setValue(value - 1);
           }
         }}
