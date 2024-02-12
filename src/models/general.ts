@@ -50,6 +50,8 @@ export interface IProduct {
 export interface IProductCookie {
   slug: string;
   amount: number;
+  price: number;
+  name: string;
 }
 
 export interface ISimilarProduct {

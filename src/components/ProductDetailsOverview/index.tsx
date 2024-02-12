@@ -29,7 +29,12 @@ const ProductDetailsOverview = ({ product }: ProductDetailsOverviewProps) => {
             style: "decimal",
           })}
         </div>
-        <CartForm cartCookiesitems={cartItemsArray} slug={product.slug} />
+        <CartForm
+          cartCookiesitems={cartItemsArray}
+          slug={product.slug}
+          price={product.price}
+          name={product.name}
+        />
       </div>
     </div>
   );

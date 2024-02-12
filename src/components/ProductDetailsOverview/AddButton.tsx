@@ -6,9 +6,17 @@ interface AddButtonProps {
   cartCookiesitems: IProductCookie[];
   slug: string;
   value: number;
+  price: number;
+  name: string;
 }
 
-const AddButton = ({ cartCookiesitems, slug, value }: AddButtonProps) => {
+const AddButton = ({
+  cartCookiesitems,
+  slug,
+  value,
+  price,
+  name,
+}: AddButtonProps) => {
   const oneDay = 24 * 60 * 60 * 1000;
   return (
     <Button
@@ -21,14 +29,20 @@ const AddButton = ({ cartCookiesitems, slug, value }: AddButtonProps) => {
           const index = cartCookiesitems.indexOf(existItem[0]);
           const newArray = cartCookiesitems.filter((_item, i) => i !== index);
           addRemoveCookies(
-            [...newArray, { slug: slug, amount: value }],
+            [
+              ...newArray,
+              { slug: slug, amount: value, price: price, name: name },
+            ],
             "cart",
             7 * oneDay
           );
           return;
         }
         addRemoveCookies(
-          [...cartCookiesitems, { slug: slug, amount: value }],
+          [
+            ...cartCookiesitems,
+            { slug: slug, amount: value, price: price, name: name },
+          ],
           "cart",
           7 * oneDay
         );

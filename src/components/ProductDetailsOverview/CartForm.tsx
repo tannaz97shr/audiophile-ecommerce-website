@@ -8,9 +8,11 @@ import AddButton from "./AddButton";
 interface CartFormProps {
   slug: string;
   cartCookiesitems: IProductCookie[];
+  price: number;
+  name: string;
 }
 
-const CartForm = ({ cartCookiesitems, slug }: CartFormProps) => {
+const CartForm = ({ cartCookiesitems, slug, price, name }: CartFormProps) => {
   const [value, setValue] = useState<number>(1);
   return (
     <div className="flex mb-2 gap-4">
@@ -19,6 +21,8 @@ const CartForm = ({ cartCookiesitems, slug }: CartFormProps) => {
         cartCookiesitems={cartCookiesitems}
         slug={slug}
         value={value}
+        price={price}
+        name={name}
       />
     </div>
   );

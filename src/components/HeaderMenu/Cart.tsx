@@ -2,9 +2,12 @@
 
 import { addRemoveAllCookies } from "@/helpers/cookies";
 import { IProductCookie } from "@/models/general";
+import Image from "next/image";
 import { useState } from "react";
 import Backdrop from "../UI/Backdrop";
+import { Button } from "../UI/Button";
 import { CartIcon } from "../UI/Icons";
+import InputNumber from "../UI/NumberInput";
 import { H6 } from "../UI/Typography";
 
 interface CartProps {
@@ -12,6 +15,7 @@ interface CartProps {
 }
 const Cart = ({ items }: CartProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  let total = 0;
   return (
     <>
       <button
@@ -28,8 +32,41 @@ const Cart = ({ items }: CartProps) => {
           <div className="absolute bg-white top-[100px] z-30 right-0 left-0 w-[90%] mx-auto rounded-lg p-7">
             <div className="flex justify-between">
               <H6>cart ({items.length})</H6>
-              <button onClick={() => addRemoveAllCookies()}>Remove all</button>
+              <button
+                onClick={() => addRemoveAllCookies()}
+                className=" text-border-grey underline"
+              >
+                Remove all
+              </button>
             </div>
+            {items.map((item: IProductCookie) => {
+              total = total + item.price * item.amount;
+              return (
+                <div className="flex flex-row my-6">
+                  <Image
+                    width={64}
+                    height={64}
+                    className="rounded-lg"
+                    alt={item.name}
+                    src={`/assets/product-${item.slug}/desktop/image-product.jpg`}
+                  />
+                  <div className="flex flex-1 flex-col mx-4 text-sm uppercase font-bold">
+                    <span>{item.name}</span>
+                    <span className=" text-border-grey">
+                      $ {item.price * item.amount}
+                    </span>
+                  </div>
+                  <InputNumber value={item.amount} setValue={() => null} />
+                </div>
+              );
+            })}
+            <div className="flex justify-between">
+              <span className=" uppercase text-border-grey">total</span>
+              <span className="font-bold">$ {total}</span>
+            </div>
+            <Button href="/checkout" className="w-full mt-8 justify-center">
+              Checkout
+            </Button>
           </div>
         </>
       )}
