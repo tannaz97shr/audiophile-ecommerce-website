@@ -9,7 +9,7 @@ const CheckoutPage = () => {
         <H3>checkout</H3>
         <CheckoutForm />
       </div>
-      <div className=" bg-white rounded-lg p-6">
+      <div className=" bg-white rounded-lg p-6 mt-8">
         <SubmitButton type="submit" form="checkout-form">
           CONTINUE & PAY
         </SubmitButton>
