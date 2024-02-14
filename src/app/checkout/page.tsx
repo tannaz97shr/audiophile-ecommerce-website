@@ -5,12 +5,12 @@ import { H3 } from "@/components/UI/Typography";
 
 const CheckoutPage = () => {
   return (
-    <div className=" bg-grey p-3">
-      <div className=" bg-white rounded-lg p-6">
+    <div className=" bg-grey p-3 flex flex-col lg:flex-row lg:gap-4">
+      <div className=" bg-white rounded-lg p-6 lg:w-2/3">
         <H3>checkout</H3>
         <CheckoutForm />
       </div>
-      <div className=" bg-white rounded-lg p-6 mt-8">
+      <div className=" bg-white rounded-lg p-6 mt-8 lg:w-1/3 lg:h-fit lg:mt-0">
         <CheckoutSummary />
         <SubmitButton
           type="submit"

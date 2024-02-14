@@ -14,22 +14,24 @@ const CheckoutForm = () => {
   return (
     <form id="checkout-form" action={formAction}>
       <Subtitle className="mt-8 mb-4 font-bold">Billing details</Subtitle>
+      <div className="flex flex-col md:flex-row md:gap-4 md:w-full">
+        <Input
+          required
+          className="mb-6 md:w-1/2"
+          label={"name"}
+          placeholder="Alexie Ward"
+          name="name"
+        />
+        <Input
+          className="mb-6 md:w-1/2"
+          label={"email address"}
+          name="email"
+          required
+          placeholder="alexei@mail.com"
+        />
+      </div>
       <Input
-        required
-        className="mb-6"
-        label={"name"}
-        placeholder="Alexie Ward"
-        name="name"
-      />
-      <Input
-        className="mb-6"
-        label={"email address"}
-        name="email"
-        required
-        placeholder="alexei@mail.com"
-      />
-      <Input
-        className="mb-6"
+        className="mb-6 md:w-1/2"
         label={"phone number"}
         placeholder="+1 202-555-0136"
         name="phone"
@@ -43,62 +45,71 @@ const CheckoutForm = () => {
         label={"Your Address"}
         placeholder="1137 Williams Avenue"
       />
+      <div className="flex flex-col md:flex-row md:gap-4 md:w-full">
+        <Input
+          required
+          className="mb-6 md:w-1/2"
+          name="zipcode"
+          label={"ZIP Code"}
+          placeholder="10001"
+        />
+        <Input
+          required
+          className="mb-6 md:w-1/2"
+          name="city"
+          label={"City"}
+          placeholder="New York"
+        />
+      </div>
       <Input
         required
-        className="mb-6"
-        name="zipcode"
-        label={"ZIP Code"}
-        placeholder="10001"
-      />
-      <Input
-        required
-        className="mb-6"
-        name="city"
-        label={"City"}
-        placeholder="New York"
-      />
-      <Input
-        required
-        className="mb-6"
+        className="mb-6 md:w-1/2"
         name="country"
         label={"Country"}
         placeholder="United States"
       />
-      <Subtitle className="mt-8 mb-4 font-bold">payment details</Subtitle>
-      <Radio
-        onChange={(val: string) => {
-          setPaymentMethod(val);
-        }}
-        label="e-Money"
-        name="paymentMethod"
-        value={"eMoney"}
-      />
-      <Radio
-        onChange={(val: string) => {
-          setPaymentMethod(val);
-        }}
-        className="my-6"
-        label="Cash on Delivery"
-        name="paymentMethod"
-        value={"cash"}
-      />
+      <Subtitle className="mb-4 font-bold mt-8">payment details</Subtitle>
+      <div className=" flex flex-col md:flex-row md:items-baseline">
+        <div className="md:w-1/2">
+          <div className="text-sm font-bold mb-4">Payment Method</div>
+        </div>
+        <div className="flex flex-col md:w-1/2">
+          <Radio
+            onChange={(val: string) => {
+              setPaymentMethod(val);
+            }}
+            label="e-Money"
+            name="paymentMethod"
+            value={"eMoney"}
+          />
+          <Radio
+            onChange={(val: string) => {
+              setPaymentMethod(val);
+            }}
+            className="my-6"
+            label="Cash on Delivery"
+            name="paymentMethod"
+            value={"cash"}
+          />
+        </div>
+      </div>
       {paymentMethod === "eMoney" && (
-        <>
+        <div className=" flex flex-col md:flex-row md:gap-4">
           <Input
             required
-            className="mb-6"
+            className="mb-6 md:w-1/2"
             name="eMoneyNumber"
             label={"e-Money Number"}
             placeholder="238521993"
           />
           <Input
             required
-            className="mb-6"
+            className="mb-6 md:w-1/2"
             name="eMoneyPin"
             label={"e-Money PIN"}
             placeholder="6891"
           />
-        </>
+        </div>
       )}
     </form>
   );
