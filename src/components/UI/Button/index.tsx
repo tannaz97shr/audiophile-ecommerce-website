@@ -6,6 +6,8 @@ interface ButtonProps {
   className?: string;
   href?: string;
   onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  form?: string;
 }
 
 export const Button = ({
@@ -14,6 +16,8 @@ export const Button = ({
   className,
   href,
   onClick,
+  type,
+  form,
 }: ButtonProps) => {
   const primaryClass =
     "border border-orange-dark hover:border-orange-light bg-orange-dark text-white hover:bg-orange-light";
@@ -45,7 +49,7 @@ export const Button = ({
           ? textClass
           : primaryClass
       } ${className && className}`}
-      onClick={onClick}
+      onClick={onClick ? () => onClick() : () => null}
     >
       {children}
     </button>

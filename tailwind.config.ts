@@ -20,7 +20,7 @@ const config: Config = {
       "orange-dark": "#d87d4a",
       "orange-light": "#fbaf85",
       red: "#CD2C2C",
-      backdrop: "rgba(0, 0, 0, 0.25)",
+      backdrop: "rgba(0, 0, 0, 0.4)",
     },
   },
   plugins: [],

@@ -10,7 +10,6 @@ interface ProductDetailsSimilarProps {
 const ProductDetailsSimilarSection = ({
   others,
 }: ProductDetailsSimilarProps) => {
-  console.log("others", others);
   return (
     <div>
       <H3 className="mt-10 mb-8 md:text-center">You may also like</H3>
@@ -19,7 +18,7 @@ const ProductDetailsSimilarSection = ({
           const splitImage = item.image.desktop.split("/");
           const imageName = splitImage[splitImage.length - 1];
           return (
-            <div className="flex flex-col w-full">
+            <div key={item.slug} className="flex flex-col w-full">
               <div className="relative w-full aspect-[8/3] md:aspect-[11/16] lg:aspect-square rounded-lg overflow-hidden">
                 <ClientSideImage slug={item.slug} imageName={imageName} />
               </div>

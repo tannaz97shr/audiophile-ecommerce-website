@@ -13,7 +13,6 @@ export const ProductPage = async ({ params }: { params: { slug: string } }) => {
   if (!product) {
     notFound();
   }
-  console.log(product);
   return (
     <div className="flex flex-col mx-3 md:mx-auto md:w-[690px] lg:w-[1020px] xl:w-[1110px]">
       <ProductDetailsOverview product={product} />

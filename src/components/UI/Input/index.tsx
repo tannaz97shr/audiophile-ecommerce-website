@@ -15,9 +15,10 @@ const Input = ({
   required,
   error,
   className,
+  ...rest
 }: InputProps) => {
   return (
-    <label className="flex flex-col capitalize text-sm w-fit">
+    <label className={`flex flex-col capitalize text-sm ${className}`}>
       <div className="flex">
         <span className="font-bold">{label}</span>
         {error ? <span className="ml-auto text-red">{error}</span> : null}
@@ -25,9 +26,10 @@ const Input = ({
       <input
         className={`border border-grey-dark py-4 px-6 rounded-lg mt-2 focus-visible:outline-none
         focus-visible:border-orange-dark
-        ${error && "border-2 border-red"} ${className}`}
+        ${error && "border-2 border-red"}`}
         required={required}
         placeholder={placeholder}
+        {...rest}
       />
     </label>
   );
