@@ -3,6 +3,7 @@
 import { addRemoveAllCookies, addRemoveCookies } from "@/helpers/cookies";
 import { IProductCookie } from "@/models/general";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Backdrop from "../UI/Backdrop";
 import { Button } from "../UI/Button";
@@ -16,6 +17,7 @@ interface CartProps {
 const Cart = ({ items }: CartProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [cartItems, setCartItems] = useState(items);
+  const router = useRouter();
   let total = 0;
   return (
     <>
@@ -76,7 +78,14 @@ const Cart = ({ items }: CartProps) => {
               <span className=" uppercase text-border-grey">total</span>
               <span className="font-bold">$ {total}</span>
             </div>
-            <Button href="/checkout" className="w-full mt-8 justify-center">
+            <Button
+              // href="/checkout"
+              onClick={() => {
+                setIsOpen(false);
+                router.push("/checkout");
+              }}
+              className="w-full mt-8 justify-center"
+            >
               Checkout
             </Button>
           </div>

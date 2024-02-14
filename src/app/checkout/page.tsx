@@ -1,4 +1,5 @@
 import CheckoutForm from "@/components/CheckoutForm";
+import CheckoutSummary from "@/components/CheckoutSummary";
 import SubmitButton from "@/components/UI/SubmitButton";
 import { H3 } from "@/components/UI/Typography";
 
@@ -10,7 +11,12 @@ const CheckoutPage = () => {
         <CheckoutForm />
       </div>
       <div className=" bg-white rounded-lg p-6 mt-8">
-        <SubmitButton type="submit" form="checkout-form">
+        <CheckoutSummary />
+        <SubmitButton
+          type="submit"
+          form="checkout-form"
+          className="w-full justify-center"
+        >
           CONTINUE & PAY
         </SubmitButton>
       </div>
