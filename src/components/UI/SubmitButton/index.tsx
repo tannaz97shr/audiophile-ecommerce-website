@@ -9,7 +9,7 @@ interface SubmitButtonProps {
   form?: string;
 }
 
-export const SubmitButton = ({
+const SubmitButton = ({
   children,
   className,
   type,

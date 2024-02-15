@@ -7,11 +7,7 @@ import { getProductsByCategory } from "@/helpers/products";
 import { IProduct } from "@/models/general";
 import { notFound } from "next/navigation";
 
-export const CategoryPage = async ({
-  params,
-}: {
-  params: { slug: string };
-}) => {
+const CategoryPage = async ({ params }: { params: { slug: string } }) => {
   const products: IProduct[] = await getProductsByCategory(params.slug);
   if (!products.length) {
     notFound();
