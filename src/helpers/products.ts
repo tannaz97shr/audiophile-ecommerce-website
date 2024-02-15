@@ -5,6 +5,7 @@ import { promises as fs } from "fs";
 
 export const getProducts = async (): Promise<IProduct[]> => {
   const file = await fs.readFile(process.cwd() + "/public/data.json", "utf8");
+  console.log(process.cwd());
   const data = JSON.parse(file);
   return data;
 };
@@ -42,12 +43,3 @@ export const getProductBySlug = async (
   }
   return filteredProducts[0];
 };
-
-// export const getAllCategories = async () => {
-//   const allProducts = await getProducts();
-//   const categories: string[] = allProducts.map(
-//     (product: IProduct) => product.category
-//   );
-//   const noDuplicate = Array.from(new Set(categories));
-//   return noDuplicate;
-// }
