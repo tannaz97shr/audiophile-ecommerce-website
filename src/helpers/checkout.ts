@@ -17,6 +17,7 @@ export async function checkoutAction(_prevState: any, formData: FormData) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: validatedFields.error.message,
+      status: 500,
     };
   }
   const rawFormData = {
@@ -32,5 +33,6 @@ export async function checkoutAction(_prevState: any, formData: FormData) {
   };
   return {
     message: "success",
+    status: 200,
   };
 }
