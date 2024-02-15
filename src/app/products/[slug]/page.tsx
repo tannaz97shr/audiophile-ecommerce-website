@@ -9,7 +9,7 @@ import ProductDetailsSimilarSection from "@/components/ProductDetailsSimilarSect
 import { getProductBySlug } from "@/helpers/products";
 import { notFound } from "next/navigation";
 
-export const ProductPage = async ({ params }: { params: { slug: string } }) => {
+const ProductPage = async ({ params }: { params: { slug: string } }) => {
   const product = await getProductBySlug(params.slug);
   if (!product) {
     notFound();
