@@ -1,12 +1,13 @@
 "use server";
 
 import { IProduct } from "@/models/general";
-import { promises as fs } from "fs";
 
 export const getProducts = async (): Promise<IProduct[]> => {
-  const file = await fs.readFile(process.cwd() + "/public/data.json", "utf8");
-  const data = JSON.parse(file);
-  return data;
+  const file = await fetch(process.env.NEXT_PUBLIC_LOCAL_HOST + "data.json");
+  const dataJson = await file.json();
+  console.log("datajson", dataJson);
+  // const data = JSON.parse(file.json());
+  return dataJson;
 };
 
 export const getHomeFeaturedProducts = async (): Promise<IProduct[]> => {
@@ -42,12 +43,3 @@ export const getProductBySlug = async (
   }
   return filteredProducts[0];
 };
-
-// export const getAllCategories = async () => {
-//   const allProducts = await getProducts();
-//   const categories: string[] = allProducts.map(
-//     (product: IProduct) => product.category
-//   );
-//   const noDuplicate = Array.from(new Set(categories));
-//   return noDuplicate;
-// }

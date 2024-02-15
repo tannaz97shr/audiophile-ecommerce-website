@@ -9,7 +9,6 @@ export async function addRemoveCookies(
   name: string,
   time: number
 ) {
-  "use server";
   const filteredItems = items.filter((product) => product.amount !== 0);
   cookies().set({
     name: name,
@@ -28,7 +27,6 @@ export async function getCartCookies() {
 }
 
 export async function addRemoveAllCookies() {
-  "use server";
   cookies().set({
     name: "cart",
     value: JSON.stringify([]),
