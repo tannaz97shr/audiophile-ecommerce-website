@@ -1,13 +1,13 @@
 "use server";
 
 import { IProduct } from "@/models/general";
-import { promises as fs } from "fs";
 
 export const getProducts = async (): Promise<IProduct[]> => {
-  const file = await fs.readFile(process.cwd() + "/public/data.json", "utf8");
-  console.log(process.cwd());
-  const data = JSON.parse(file);
-  return data;
+  const file = await fetch(process.env.LOCAL_HOST + "data.json");
+  const dataJson = await file.json();
+  console.log("datajson", dataJson);
+  // const data = JSON.parse(file.json());
+  return dataJson;
 };
 
 export const getHomeFeaturedProducts = async (): Promise<IProduct[]> => {
