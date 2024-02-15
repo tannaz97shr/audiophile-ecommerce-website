@@ -45,7 +45,7 @@ const Cart = ({ items }: CartProps) => {
             {cartItems.map((item: IProductCookie, index) => {
               total = total + item.price * item.amount;
               return (
-                <div className="flex flex-row my-6">
+                <div className="flex flex-row my-6" key={item.slug}>
                   <Image
                     width={64}
                     height={64}
