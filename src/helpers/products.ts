@@ -3,7 +3,7 @@
 import { IProduct } from "@/models/general";
 
 export const getProducts = async (): Promise<IProduct[]> => {
-  const file = await fetch(process.env.LOCAL_HOST + "data.json");
+  const file = await fetch(process.env.NEXT_PUBLIC_LOCAL_HOST + "data.json");
   const dataJson = await file.json();
   console.log("datajson", dataJson);
   // const data = JSON.parse(file.json());
