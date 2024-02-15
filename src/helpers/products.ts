@@ -1,3 +1,5 @@
+"use server";
+
 import { IProduct } from "@/models/general";
 import { promises as fs } from "fs";
 
