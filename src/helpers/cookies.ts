@@ -10,9 +10,10 @@ export async function addRemoveCookies(
   time: number
 ) {
   "use server";
+  const filteredItems = items.filter((product) => product.amount !== 0);
   cookies().set({
     name: name,
-    value: JSON.stringify(items),
+    value: JSON.stringify(filteredItems),
     expires: Date.now() + time,
   });
 }

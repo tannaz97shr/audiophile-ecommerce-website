@@ -1,9 +1,11 @@
-import { getCartCookies } from "@/helpers/cookies";
 import { IProductCookie } from "@/models/general";
 import Image from "next/image";
 
-const CheckoutSummary = async () => {
-  const cartItems = await getCartCookies();
+interface CheckoutSummaryProps {
+  cartItems: IProductCookie[];
+}
+
+const CheckoutSummary = async ({ cartItems }: CheckoutSummaryProps) => {
   let total = 0;
   const shipping = 50;
   const vat = 1079;

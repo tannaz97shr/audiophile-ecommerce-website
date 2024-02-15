@@ -1,5 +1,6 @@
 import BestGrearSection from "@/components/BestGearSection";
 import CategorySection from "@/components/CategorySection";
+import GoBackButton from "@/components/GoBackButton";
 import ProductDetailsFeatures from "@/components/ProductDetailsFeatures";
 import ProductDetailsGallery from "@/components/ProductDetailsGallery";
 import ProductDetailsInTheBox from "@/components/ProductDetailsInTheBox";
@@ -15,6 +16,7 @@ export const ProductPage = async ({ params }: { params: { slug: string } }) => {
   }
   return (
     <div className="flex flex-col mx-3 md:mx-auto md:w-[690px] lg:w-[1020px] xl:w-[1110px]">
+      <GoBackButton />
       <ProductDetailsOverview product={product} />
       <div className="flex flex-col lg:flex-row">
         <ProductDetailsFeatures features={product.features} />
